@@ -154,9 +154,14 @@ build_prompt() {
   prompt_status
   prompt_context
   prompt_dir
-  prompt_git
   prompt_hg
   prompt_end
 }
 
+build_rprompt() {
+	RETVAL=$?
+  prompt_git
+}
+
 PROMPT='%{%f%b%k%}$(build_prompt) '
+RPROMPT='%{%f%b%k%}$(build_rprompt) '
