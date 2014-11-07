@@ -13,6 +13,7 @@ EDITOR=/usr/bin/vim
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias lla="ls -lah --colors"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
