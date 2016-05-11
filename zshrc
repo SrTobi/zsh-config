@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh configuration.
 ZSH=/usr/share/oh-my-zsh/
-ZSH_CUSTOM=~/.config/zsh
+ZSH_CUSTOM=~/.config/zsh-config
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -14,6 +14,21 @@ EDITOR=/usr/bin/vim
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lla="ls -lah --colors"
+#alias vscode="visual-studio-code &|;"
+vscode() {
+    visual-studio-code "$*" &|;
+}
+
+paththis() {
+    PATH=$PATH:$(realpath ${1:-.})
+}
+
+unpaththis() {
+    PATH=:$PATH:
+    PATH=${PATH//:$(realpath ${1:-.}):/:}
+    PATH=${PATH#:}
+    PATH=${PATH%:}
+}
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
