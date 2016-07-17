@@ -30,6 +30,25 @@ unpaththis() {
     PATH=${PATH%:}
 }
 
+use_python() {
+    case "$1" in
+        "")
+            echo "Specify the python version you want to use!"
+            ;;
+        "2")
+            sudo rm /usr/bin/python
+            sudo ln -s /usr/bin/python2 /usr/bin/python
+            ;;
+        "3")
+            sudo rm /usr/bin/python
+            sudo ln -s /usr/bin/python3 /usr/bin/python
+            ;;
+        *)
+            echo "Unknown python version '$1'!"
+            ;;
+    esac
+}
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
