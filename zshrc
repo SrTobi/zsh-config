@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh configuration.
 ZSH=/usr/share/oh-my-zsh/
-ZSH_CUSTOM=~/.config/zsh-config
+ZSH_CUSTOM=`dirname $0`
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
