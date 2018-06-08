@@ -15,9 +15,6 @@ EDITOR=/usr/bin/vim
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lla="ls -lah --colors"
 #alias vscode="visual-studio-code &|;"
-vscode() {
-    visual-studio-code "$*" &|;
-}
 
 paththis() {
     PATH=$PATH:$(realpath ${1:-.})
