@@ -6,7 +6,11 @@ ZSH_CUSTOM=`dirname $0`
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="local"
+if [ "$(id -u)" = "0" ]; then
+	ZSH_THEME="local-root"
+else
+	ZSH_THEME="local"
+fi
 
 
 EDITOR=/usr/bin/vim
