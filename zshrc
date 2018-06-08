@@ -54,9 +54,6 @@ use_python() {
 
 fpath+=${ZSH_CUSTOM}/completions
 
-export HISTFILE=~/.zsh_history  # ensure history file visibility
-export HH_CONFIG=hicolor        # get more colors
-bindkey -s "\C-r" "\eqhh\n"     # bind hh to Ctrl-r (for Vi mode check doc)
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -90,6 +87,10 @@ DISABLE_AUTO_UPDATE="true"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+
+export HISTFILE=~/.zsh_history  # ensure history file visibility
+export HH_CONFIG=hicolor        # get more colors
+bindkey -s "\C-r" "\eqhh\n"     # bind hh to Ctrl-r (for Vi mode check doc)
 
 # Customize to your needs...
 if [ -f ~/bin/zshstart ]; then
