@@ -14,7 +14,13 @@ EDITOR=/usr/bin/vim
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lla="ls -lah --colors"
+alias g=git
+alias p=pdf
 #alias vscode="visual-studio-code &|;"
+
+pdf() {
+	foxitreader "$*" &>/dev/null &|;
+}
 
 paththis() {
     PATH=$PATH:$(realpath ${1:-.})
@@ -45,6 +51,12 @@ use_python() {
             ;;
     esac
 }
+
+fpath+=${ZSH_CUSTOM}/completions
+
+export HISTFILE=~/.zsh_history  # ensure history file visibility
+export HH_CONFIG=hicolor        # get more colors
+bindkey -s "\C-r" "\eqhh\n"     # bind hh to Ctrl-r (for Vi mode check doc)
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -80,3 +92,6 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+if [ -f ~/bin/zshstart ]; then
+	source ~/bin/zshstart
+fi
