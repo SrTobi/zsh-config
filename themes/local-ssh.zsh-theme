@@ -22,4 +22,4 @@ else
   fi
 fi
 
-PROMPT='%{$fg[cyan]%}[%{$fg[red]%}$USER@ssh in %{$fg[cyan]%}%~% ]%(?.%{$fg[green]%}.%{$fg[red]%})%B$%b '
+PROMPT='%{$fg[cyan]%}[%{$fg[red]%}$USER@%m in %{$fg[cyan]%}%~% ]%(?.%{$fg[green]%}.%{$fg[red]%})%B$%b '
