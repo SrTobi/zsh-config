@@ -39,6 +39,16 @@ unpaththis() {
     PATH=${PATH%:}
 }
 
+git_id_databyte() {
+	git config user.name SrTobi
+	git config user.email "code.databyte@gmail.com"
+}
+
+git_id_jetbrains() {
+	git config user.name "Tobias Kahlert"
+	git config user.email "tobias.kahlert@jetbrains.com"
+}
+
 use_python() {
     case "$1" in
         "")
