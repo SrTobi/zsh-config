@@ -61,6 +61,17 @@ use_python() {
 fpath+=${ZSH_CUSTOM}/completions
 
 
+# Start or reuse ssh-agent
+SSH_TMP_PATH="/tmp/ssh-agent-store/$USER-ssh.things"
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+	mkdir -p $(dirname $SSH_TMP_PATH)
+    ssh-agent > $SSH_TMP_PATH
+fi
+if [[ "$SSH_AGENT_PID" == "" ]]; then
+    eval "$(<$SSH_TMP_PATH)" > /dev/null
+fi
+
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
